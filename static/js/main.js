@@ -25,6 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
         randomRecipeBtn.addEventListener('click', displayRandomRecipe);
     }
     
+    // Add event listener for more recipes button
+    const moreRecipesBtn = document.getElementById('more-recipes');
+    if (moreRecipesBtn) {
+        moreRecipesBtn.addEventListener('click', loadMoreRecipes);
+    }
+    
     // Food Database Functionality
     loadFoodDatabase();
     
@@ -46,11 +52,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Weather icons based on condition
     updateWeatherIcons();
+    updateCurrentTime();
+    setInterval(updateCurrentTime, 60000); // Update time every minute
+    
+    // Calendar Functionality
+    initCalendarTabs();
+    
+    // Checklist Functionality
+    initChecklist();
 });
 
 // Global variables to store data
 let recipes = [];
 let foodDatabase = {};
+let additionalRecipes = false;
 
 // Load recipes from JSON file
 function loadRecipes() {
@@ -212,12 +227,126 @@ function displaySampleRecipes() {
         }
     ];
     
+    const additionalSampleRecipes = [
+        {
+            name: 'Entenfreundlicher Kürbisbrei',
+            type: 'Mittagessen',
+            ingredients: [
+                'Eine Tasse gewürfelter Kürbis',
+                '1/4 Tasse Haferflocken',
+                'Etwas Petersilie',
+                'Ein paar Tropfen Olivenöl'
+            ],
+            instructions: [
+                'Kürbis kochen oder dämpfen, bis er weich ist.',
+                'Mit einer Gabel zerdrücken und abkühlen lassen.',
+                'Haferflocken und gehackte Petersilie untermischen.',
+                'Mit ein paar Tropfen Olivenöl verfeinern.',
+                'In kleine Portionen teilen und servieren.'
+            ],
+            time: 20,
+            difficulty: 'Mittel'
+        },
+        {
+            name: 'Beerenmischung mit Samen',
+            type: 'Dessert',
+            ingredients: [
+                'Eine Handvoll gemischte Beeren',
+                'Ein Teelöffel Sonnenblumenkerne',
+                'Ein Teelöffel Leinsamen',
+                'Etwas Minze'
+            ],
+            instructions: [
+                'Beeren waschen und halbieren oder vierteln (je nach Größe).',
+                'Samen vorsichtig untermischen.',
+                'Minzblätter in feine Streifen schneiden.',
+                'Alles vorsichtig vermengen und servieren.'
+            ],
+            time: 8,
+            difficulty: 'Einfach'
+        },
+        {
+            name: 'Kräuter-Gemüsebällchen',
+            type: 'Mittagessen',
+            ingredients: [
+                'Eine kleine Karotte',
+                'Eine halbe Zucchini',
+                'Frische Kräuter (Dill, Petersilie)',
+                'Ein Teelöffel Haferflocken',
+                'Ein Spritzer Zitronensaft'
+            ],
+            instructions: [
+                'Karotte und Zucchini fein reiben.',
+                'Kräuter waschen und fein hacken.',
+                'Alle Zutaten in einer Schüssel vermischen.',
+                'Mit den Händen kleine Bällchen formen.',
+                'Auf einem Teller anrichten und servieren.'
+            ],
+            time: 15,
+            difficulty: 'Mittel'
+        },
+        {
+            name: 'Wasserkresse-Salat',
+            type: 'Vorspeise',
+            ingredients: [
+                'Eine Handvoll Wasserkresse',
+                'Einige Gurken- und Karottenscheiben',
+                'Einige Traubenstücke',
+                'Einige Löwenzahnblätter'
+            ],
+            instructions: [
+                'Alle Zutaten gründlich waschen.',
+                'Gurke und Karotte in dünne Scheiben schneiden.',
+                'Trauben halbieren.',
+                'Alles vorsichtig mischen und sofort servieren.'
+            ],
+            time: 10,
+            difficulty: 'Einfach'
+        },
+        {
+            name: 'Entennest aus Körnern',
+            type: 'Snack',
+            ingredients: [
+                'Eine Handvoll gemischter Körner (Hirse, Buchweizen)',
+                'Etwas Apfel, fein gewürfelt',
+                'Einige Traubenstücke',
+                'Ein Spritzer Wasser'
+            ],
+            instructions: [
+                'Körner in eine kleine Schüssel geben.',
+                'Apfel und Trauben in sehr kleine Stücke schneiden.',
+                'Alle Zutaten mischen und mit etwas Wasser befeuchten.',
+                'Die Mischung in eine Nestform bringen.',
+                'Kalt servieren.'
+            ],
+            time: 12,
+            difficulty: 'Einfach'
+        }
+    ];
+    
     const recipeContainer = document.querySelector('.recipe-container');
     recipeContainer.innerHTML = '';
     
-    sampleRecipes.forEach(recipe => {
+    // Display default or additional recipes
+    const recipesToShow = additionalRecipes ? additionalSampleRecipes : sampleRecipes;
+    
+    recipesToShow.forEach(recipe => {
         recipeContainer.appendChild(createRecipeCard(recipe));
     });
+}
+
+// Function to load more recipes
+function loadMoreRecipes() {
+    additionalRecipes = !additionalRecipes;
+    const moreRecipesBtn = document.getElementById('more-recipes');
+    
+    if (additionalRecipes) {
+        moreRecipesBtn.innerHTML = '<i class="fas fa-chevron-left"></i> Zurück zu Standardrezepten';
+    } else {
+        moreRecipesBtn.innerHTML = '<i class="fas fa-plus"></i> Mehr Rezepte';
+    }
+    
+    displaySampleRecipes();
 }
 
 // Load food database from JSON file
@@ -370,4 +499,146 @@ function updateWeatherIcons() {
     }
     
     // Forecast icons are already set in HTML
+}
+
+// Update current time in the weather section
+function updateCurrentTime() {
+    const currentTimeElement = document.getElementById('current-time');
+    const windSpeedElement = document.getElementById('wind-speed');
+    
+    if (currentTimeElement) {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        currentTimeElement.textContent = `${hours}:${minutes}`;
+        
+        // Update wind speed randomly for simulation
+        if (windSpeedElement) {
+            const windLevels = ['Leicht', 'Mäßig', 'Stark'];
+            const randomWindIndex = Math.floor(Math.random() * 3);
+            windSpeedElement.textContent = windLevels[randomWindIndex];
+        }
+    }
+}
+
+// Initialize tabs for seasonal foods in the calendar section
+function initCalendarTabs() {
+    const seasonTabs = document.querySelectorAll('.season-tab');
+    const seasonContents = document.querySelectorAll('.season-content');
+    
+    if (seasonTabs.length > 0) {
+        seasonTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                seasonTabs.forEach(t => t.classList.remove('active'));
+                seasonContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                const season = tab.getAttribute('data-season');
+                document.getElementById(`${season}-content`).classList.add('active');
+            });
+        });
+    }
+    
+    // Add event listeners for calendar navigation
+    const prevMonthBtn = document.getElementById('prev-month');
+    const nextMonthBtn = document.getElementById('next-month');
+    
+    if (prevMonthBtn && nextMonthBtn) {
+        const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+        let currentMonthIndex = 4; // May (0-based index)
+        let currentYear = 2025;
+        
+        prevMonthBtn.addEventListener('click', () => {
+            currentMonthIndex = currentMonthIndex > 0 ? currentMonthIndex - 1 : 11;
+            if (currentMonthIndex === 11) currentYear--;
+            updateCalendarHeader();
+        });
+        
+        nextMonthBtn.addEventListener('click', () => {
+            currentMonthIndex = currentMonthIndex < 11 ? currentMonthIndex + 1 : 0;
+            if (currentMonthIndex === 0) currentYear++;
+            updateCalendarHeader();
+        });
+        
+        function updateCalendarHeader() {
+            const calendarTitle = document.querySelector('.calendar-nav h3');
+            if (calendarTitle) {
+                calendarTitle.textContent = `${months[currentMonthIndex]} ${currentYear}`;
+            }
+        }
+    }
+}
+
+// Initialize checklist functionality
+function initChecklist() {
+    const taskCheckboxes = document.querySelectorAll('.task-checkbox');
+    const resetButton = document.getElementById('reset-checklist');
+    const dailyProgressBar = document.getElementById('daily-progress');
+    const weeklyProgressBar = document.getElementById('weekly-progress');
+    
+    // Load saved state from localStorage if available
+    loadChecklistState();
+    
+    if (taskCheckboxes.length > 0) {
+        taskCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                updateProgress();
+                saveChecklistState();
+            });
+        });
+    }
+    
+    if (resetButton) {
+        resetButton.addEventListener('click', () => {
+            taskCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            updateProgress();
+            saveChecklistState();
+        });
+    }
+    
+    function updateProgress() {
+        const dailyTasks = document.querySelectorAll('.daily-checklist .task-checkbox');
+        const weeklyTasks = document.querySelectorAll('.weekly-checklist .task-checkbox');
+        
+        const dailyCompleted = Array.from(dailyTasks).filter(task => task.checked).length;
+        const weeklyCompleted = Array.from(weeklyTasks).filter(task => task.checked).length;
+        
+        const dailyPercentage = Math.round((dailyCompleted / dailyTasks.length) * 100);
+        const weeklyPercentage = Math.round((weeklyCompleted / weeklyTasks.length) * 100);
+        
+        if (dailyProgressBar) {
+            dailyProgressBar.style.width = `${dailyPercentage}%`;
+            dailyProgressBar.textContent = `${dailyPercentage}%`;
+        }
+        
+        if (weeklyProgressBar) {
+            weeklyProgressBar.style.width = `${weeklyPercentage}%`;
+            weeklyProgressBar.textContent = `${weeklyPercentage}%`;
+        }
+    }
+    
+    function saveChecklistState() {
+        const state = {};
+        taskCheckboxes.forEach(checkbox => {
+            state[checkbox.id] = checkbox.checked;
+        });
+        localStorage.setItem('duckCareChecklist', JSON.stringify(state));
+    }
+    
+    function loadChecklistState() {
+        const savedState = localStorage.getItem('duckCareChecklist');
+        if (savedState) {
+            const state = JSON.parse(savedState);
+            taskCheckboxes.forEach(checkbox => {
+                if (state[checkbox.id] !== undefined) {
+                    checkbox.checked = state[checkbox.id];
+                }
+            });
+            updateProgress();
+        }
+    }
 }
