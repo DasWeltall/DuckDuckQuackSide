@@ -1,0 +1,136 @@
+[
+  {
+    "name": "Haferbrei mit Löwenzahn",
+    "type": "Frühstück",
+    "ingredients": [
+      "50g Haferflocken",
+      "150ml Wasser",
+      "Eine Handvoll frische Löwenzahnblätter",
+      "Ein Teelöffel Leinsamen"
+    ],
+    "instructions": [
+      "Haferflocken mit Wasser in einem Topf vermischen.",
+      "Bei mittlerer Hitze 3-5 Minuten köcheln lassen.",
+      "Löwenzahnblätter waschen und klein schneiden.",
+      "Vom Herd nehmen und Löwenzahn untermischen.",
+      "Mit Leinsamen bestreuen und servieren."
+    ],
+    "time": 10,
+    "difficulty": "Einfach"
+  },
+  {
+    "name": "Apfelstückchen mit Kräutern",
+    "type": "Snack",
+    "ingredients": [
+      "1 Apfel",
+      "Frische Petersilie",
+      "Frischer Dill",
+      "Ein Spritzer Zitronensaft"
+    ],
+    "instructions": [
+      "Apfel waschen und in kleine Stücke schneiden.",
+      "Kräuter waschen und fein hacken.",
+      "Apfelstücke mit Kräutern vermischen.",
+      "Mit einem Spritzer Zitronensaft beträufeln.",
+      "Sofort servieren oder im Kühlschrank aufbewahren."
+    ],
+    "time": 5,
+    "difficulty": "Sehr einfach"
+  },
+  {
+    "name": "Gemüse-Entensalat",
+    "type": "Mittagessen",
+    "ingredients": [
+      "Eine Handvoll Salat (Rucola oder Feldsalat)",
+      "1 kleine Gurke",
+      "1 kleine Karotte",
+      "Einige Erbsen",
+      "Ein paar Traubenstücke"
+    ],
+    "instructions": [
+      "Salat waschen und in mundgerechte Stücke zupfen.",
+      "Gurke und Karotte in kleine Würfel schneiden.",
+      "Erbsen kurz in heißem Wasser blanchieren.",
+      "Alle Zutaten in einer Schüssel mischen.",
+      "Mit ein paar Traubenstücken garnieren."
+    ],
+    "time": 15,
+    "difficulty": "Mittel"
+  },
+  {
+    "name": "Beeren-Kürbismix",
+    "type": "Snack",
+    "ingredients": [
+      "Eine halbe Tasse Kürbis (gekocht und gewürfelt)",
+      "Einige Heidelbeeren",
+      "Einige Himbeeren",
+      "Ein paar Sonnenblumenkerne"
+    ],
+    "instructions": [
+      "Kürbis kochen oder dämpfen bis er weich ist.",
+      "In kleine Würfel schneiden und abkühlen lassen.",
+      "Beeren waschen und mit dem Kürbis vermischen.",
+      "Mit Sonnenblumenkernen bestreuen."
+    ],
+    "time": 20,
+    "difficulty": "Mittel"
+  },
+  {
+    "name": "Körnermischung mit Obst",
+    "type": "Frühstück",
+    "ingredients": [
+      "Eine Handvoll gemischte Körner (Hirse, Hafer, Buchweizen)",
+      "Ein halber Apfel",
+      "Einige Trauben",
+      "Etwas frischer Spinat"
+    ],
+    "instructions": [
+      "Körner in eine Schüssel geben.",
+      "Apfel waschen und in kleine Stücke schneiden.",
+      "Trauben halbieren.",
+      "Spinat waschen und kleinhacken.",
+      "Alle Zutaten vermischen und servieren."
+    ],
+    "time": 8,
+    "difficulty": "Einfach"
+  },
+  {
+    "name": "Gemüse-Reisbällchen",
+    "type": "Mittagessen",
+    "ingredients": [
+      "150g gekochter Reis (abgekühlt)",
+      "1 kleine Karotte",
+      "Etwas Gurke",
+      "Frische Kräuter"
+    ],
+    "instructions": [
+      "Karotte und Gurke fein raspeln oder in sehr kleine Würfel schneiden.",
+      "Kräuter fein hacken.",
+      "Alle Zutaten mit dem abgekühlten Reis vermischen.",
+      "Mit feuchten Händen kleine Bällchen formen.",
+      "Vor dem Servieren kurz ruhen lassen."
+    ],
+    "time": 25,
+    "difficulty": "Fortgeschritten"
+  },
+  {
+    "name": "Frische Kräuterplatte",
+    "type": "Snack",
+    "ingredients": [
+      "Frischer Löwenzahn",
+      "Petersilie",
+      "Basilikum",
+      "Feldsalat",
+      "Einige Gurkenscheiben"
+    ],
+    "instructions": [
+      "Alle Kräuter und Salat gründlich waschen.",
+      "Größere Blätter in mundgerechte Stücke teilen.",
+      "Gurke in dünne Scheiben schneiden.",
+      "Alles auf einem Teller anrichten.",
+      "Sofort servieren, damit die Kräuter frisch bleiben."
+    ],
+    "time": 10,
+    "difficulty": "Einfach"
+  }
+]

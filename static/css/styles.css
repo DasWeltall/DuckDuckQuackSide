@@ -1,0 +1,638 @@
+:root {
+    /* Color Palette - Duck-friendly colors */
+    --primary: 200 70% 50%; /* Blue - #1a91eb */
+    --primary-light: 200 70% 90%; /* Light blue - #d6ebfa */
+    --accent: 45 100% 50%; /* Yellow - #ffd700 */
+    --accent-light: 45 100% 90%; /* Light yellow - #fff9d6 */
+    --green: 120 50% 45%; /* Green - #4caf50 */
+    --green-light: 120 60% 85%; /* Light green - #d4edda */
+    --red: 0 70% 55%; /* Red - #e84c3d */
+    --red-light: 0 70% 90%; /* Light red - #fadbd8 */
+    --gray-dark: 210 10% 25%; /* Dark gray - #3a4049 */
+    --gray: 210 10% 55%; /* Gray - #7f8793 */
+    --gray-light: 210 15% 90%; /* Light gray - #e9ecf0 */
+    --white: 0 0% 100%; /* White - #ffffff */
+    
+    /* Typography */
+    --font-main: 'Quicksand', sans-serif;
+    --font-accent: 'Pacifico', cursive;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Border Radius */
+    --radius-sm: 5px;
+    --radius-md: 10px;
+    --radius-lg: 15px;
+    --radius-full: 999px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: hsl(var(--gray-dark));
+    line-height: 1.6;
+    background-color: hsl(var(--primary-light));
+    padding: var(--spacing-md);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    color: hsl(var(--primary));
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: hsl(var(--accent));
+}
+
+ul, ol {
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+button, .btn {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--white));
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: var(--font-main);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+button:hover, .btn:hover {
+    background-color: hsl(var(--accent));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+button i, .btn i {
+    margin-right: var(--spacing-xs);
+}
+
+input {
+    padding: var(--spacing-md);
+    border: 2px solid hsl(var(--gray-light));
+    border-radius: var(--radius-md);
+    font-family: var(--font-main);
+    width: 100%;
+    transition: border-color 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: hsl(var(--primary));
+}
+
+/* Layout */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background-color: hsl(var(--white));
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.logo-container i {
+    color: hsl(var(--accent));
+}
+
+h1 {
+    font-family: var(--font-accent);
+    color: hsl(var(--primary));
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: hsl(var(--gray));
+    margin-top: var(--spacing-xs);
+}
+
+nav {
+    margin-bottom: var(--spacing-lg);
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    background-color: hsl(var(--white));
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.tab-btn {
+    background-color: transparent;
+    color: hsl(var(--gray));
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.tab-btn:hover {
+    background-color: hsl(var(--primary-light));
+    color: hsl(var(--primary));
+    transform: translateY(-2px);
+}
+
+.tab-btn.active {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--white));
+}
+
+.tab-btn i {
+    font-size: 1.5rem;
+    margin-right: 0;
+}
+
+main {
+    background-color: hsl(var(--white));
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+}
+
+.tab-content {
+    display: none;
+    padding: var(--spacing-lg);
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid hsl(var(--primary-light));
+}
+
+.section-header h2 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: hsl(var(--primary));
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    color: hsl(var(--gray));
+    background-color: hsl(var(--white));
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+footer i {
+    color: hsl(var(--red));
+}
+
+/* Recipe Section */
+.recipe-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.recipe-card {
+    background-color: hsl(var(--accent-light));
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.recipe-header {
+    background-color: hsl(var(--accent));
+    padding: var(--spacing-md);
+    color: hsl(var(--white));
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.recipe-header i {
+    font-size: 1.8rem;
+}
+
+.recipe-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.recipe-body {
+    padding: var(--spacing-lg);
+}
+
+.recipe-ingredients {
+    margin-bottom: var(--spacing-md);
+}
+
+.recipe-ingredients h4, .recipe-instructions h4 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    color: hsl(var(--gray-dark));
+}
+
+.recipe-instructions ol {
+    margin-left: var(--spacing-md);
+}
+
+.recipe-footer {
+    background-color: hsl(var(--white));
+    padding: var(--spacing-md);
+    border-top: 2px dashed hsl(var(--accent));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recipe-time, .recipe-difficulty {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: hsl(var(--gray));
+    font-size: 0.9rem;
+}
+
+/* Weather Section */
+.weather-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.weather-card {
+    background: linear-gradient(135deg, hsl(var(--primary-light)), hsl(var(--primary)));
+    color: hsl(var(--white));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.weather-icon {
+    font-size: 4rem;
+    color: hsl(var(--accent));
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.weather-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.temp {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.condition {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.duck-advice {
+    font-style: italic;
+}
+
+.forecast {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.forecast-day {
+    background-color: hsl(var(--primary-light));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease;
+}
+
+.forecast-day:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.forecast-day h4 {
+    margin-bottom: var(--spacing-sm);
+    color: hsl(var(--primary));
+}
+
+.forecast-day i {
+    font-size: 2rem;
+    margin: var(--spacing-sm) 0;
+    color: hsl(var(--gray));
+}
+
+.duck-weather-tips {
+    background-color: hsl(var(--green-light));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    border-left: 5px solid hsl(var(--green));
+}
+
+.duck-weather-tips h3 {
+    color: hsl(var(--green));
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.duck-weather-tips ul {
+    margin-bottom: 0;
+}
+
+/* Map Section */
+.map-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.map-legend {
+    background-color: hsl(var(--primary-light));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+}
+
+.map-legend h3 {
+    color: hsl(var(--primary));
+    margin-bottom: var(--spacing-md);
+}
+
+.map-legend ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.map-legend li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.map-legend i {
+    color: hsl(var(--primary));
+}
+
+/* Food Database Section */
+.food-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.food-search {
+    background-color: hsl(var(--white));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.search-input-container {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.search-result {
+    background-color: hsl(var(--gray-light));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.result-positive {
+    background-color: hsl(var(--green-light));
+    border-left: 5px solid hsl(var(--green));
+}
+
+.result-positive i {
+    color: hsl(var(--green));
+}
+
+.result-negative {
+    background-color: hsl(var(--red-light));
+    border-left: 5px solid hsl(var(--red));
+}
+
+.result-negative i {
+    color: hsl(var(--red));
+}
+
+.result-unknown {
+    background-color: hsl(var(--gray-light));
+    border-left: 5px solid hsl(var(--gray));
+}
+
+.result-unknown i {
+    color: hsl(var(--gray));
+}
+
+.default-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: hsl(var(--gray));
+}
+
+.default-message i {
+    font-size: 2rem;
+}
+
+.food-guide {
+    background-color: hsl(var(--accent-light));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+}
+
+.food-guide h3 {
+    color: hsl(var(--accent));
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.food-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.food-category {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.food-category h4 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.food-category.good {
+    background-color: hsl(var(--green-light));
+}
+
+.food-category.good h4 {
+    color: hsl(var(--green));
+}
+
+.food-category.bad {
+    background-color: hsl(var(--red-light));
+}
+
+.food-category.bad h4 {
+    color: hsl(var(--red));
+}
+
+.food-category ul {
+    margin-bottom: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        min-width: 45%;
+    }
+    
+    .recipe-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .forecast {
+        grid-template-columns: 1fr;
+    }
+    
+    .weather-card {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    .search-input-container {
+        flex-direction: column;
+    }
+    
+    .food-categories {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .weather-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+    
+    .weather-card {
+        grid-column: 1 / -1;
+    }
+    
+    .food-container {
+        grid-template-columns: 3fr 2fr;
+    }
+}
