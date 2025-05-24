@@ -1,9 +1,9 @@
 :root {
     /* Color Palette - Duck-friendly colors */
-    --primary: 200 70% 50%; /* Blue - #1a91eb */
-    --primary-light: 200 70% 90%; /* Light blue - #d6ebfa */
-    --accent: 45 100% 50%; /* Yellow - #ffd700 */
-    --accent-light: 45 100% 90%; /* Light yellow - #fff9d6 */
+    --primary: 160 70% 40%; /* Green - #26a69a */
+    --primary-light: 160 50% 90%; /* Light green - #e0f2f1 */
+    --accent: 40 100% 50%; /* Orange - #ffa000 */
+    --accent-light: 40 100% 90%; /* Light orange - #fff8e1 */
     --green: 120 50% 45%; /* Green - #4caf50 */
     --green-light: 120 60% 85%; /* Light green - #d4edda */
     --red: 0 70% 55%; /* Red - #e84c3d */
@@ -589,6 +589,408 @@ footer i {
     }
 }
 
+/* Calendar Section */
+.calendar-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.calendar-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.btn-icon {
+    background-color: transparent;
+    border: 2px solid hsl(var(--primary));
+    color: hsl(var(--primary));
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--white));
+    transform: translateY(-2px);
+}
+
+.month-calendar {
+    background-color: hsl(var(--white));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 600;
+    color: hsl(var(--primary));
+    margin-bottom: var(--spacing-md);
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.day {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.day:hover:not(.empty) {
+    background-color: hsl(var(--primary-light));
+    transform: scale(1.1);
+}
+
+.day.empty {
+    background-color: transparent;
+    cursor: default;
+}
+
+.day.current {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--white));
+    font-weight: 600;
+}
+
+.feeding-plan {
+    background-color: hsl(var(--accent-light));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.feeding-plan h3 {
+    color: hsl(var(--accent));
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.feeding-schedule {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.feeding-time {
+    background-color: hsl(var(--white));
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease;
+}
+
+.feeding-time:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.feeding-time h4 {
+    color: hsl(var(--primary));
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.seasonal-foods {
+    background-color: hsl(var(--primary-light));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.seasonal-foods h3 {
+    color: hsl(var(--primary));
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.season-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-sm);
+}
+
+.season-tab {
+    flex: 1;
+    padding: var(--spacing-sm);
+    text-align: center;
+    background-color: hsl(var(--white));
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.season-tab:hover, .season-tab.active {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--white));
+}
+
+.season-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.season-content.active {
+    display: block;
+}
+
+.seasonal-foods-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    list-style-type: none;
+    padding: 0;
+    margin-top: var(--spacing-md);
+}
+
+.seasonal-foods-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background-color: hsl(var(--white));
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.seasonal-foods-list li i {
+    color: hsl(var(--primary));
+}
+
+/* Checklist Section */
+.checklist-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.daily-checklist, .weekly-checklist {
+    background-color: hsl(var(--white));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.daily-checklist h3, .weekly-checklist h3 {
+    color: hsl(var(--primary));
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    background-color: hsl(var(--primary-light));
+    transition: background-color 0.2s ease;
+}
+
+.checklist-item:hover {
+    background-color: hsl(var(--accent-light));
+}
+
+.task-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid hsl(var(--primary));
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.task-checkbox:checked {
+    background-color: hsl(var(--primary));
+}
+
+.task-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: hsl(var(--white));
+    font-weight: bold;
+}
+
+.checklist-item label {
+    cursor: pointer;
+    flex: 1;
+    user-select: none;
+}
+
+.checklist-tips {
+    background-color: hsl(var(--accent-light));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.checklist-tips h3 {
+    color: hsl(var(--accent));
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.tip-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.care-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    background-color: hsl(var(--white));
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease;
+}
+
+.care-tip:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.tip-icon {
+    width: 40px;
+    height: 40px;
+    background-color: hsl(var(--primary-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(var(--primary));
+    font-size: 1.2rem;
+}
+
+.tip-content h4 {
+    color: hsl(var(--primary));
+    margin-bottom: var(--spacing-sm);
+}
+
+.progress-tracker {
+    background-color: hsl(var(--primary-light));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.progress-tracker h3 {
+    color: hsl(var(--primary));
+    margin-bottom: var(--spacing-lg);
+}
+
+.progress-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.progress-label {
+    text-align: left;
+    font-weight: 600;
+    color: hsl(var(--gray-dark));
+}
+
+.progress-outer {
+    width: 100%;
+    height: 20px;
+    background-color: hsl(var(--white));
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-inner {
+    height: 100%;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(var(--white));
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: width 0.5s ease;
+}
+
+/* Weather Additions */
+.wind-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    font-size: 1.1rem;
+}
+
+.current-time {
+    margin-top: var(--spacing-sm);
+    font-size: 1.1rem;
+    color: hsl(var(--white), 0.9);
+}
+
+.wind-tag {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-xs);
+    font-size: 0.9rem;
+    color: hsl(var(--gray));
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .tabs {
@@ -620,6 +1022,32 @@ footer i {
     .food-categories {
         grid-template-columns: 1fr;
     }
+    
+    .feeding-schedule {
+        grid-template-columns: 1fr;
+    }
+    
+    .season-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .season-tab {
+        flex-basis: 45%;
+    }
+    
+    .checklist {
+        grid-template-columns: 1fr;
+    }
+    
+    .tip-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .care-tip {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 @media (min-width: 992px) {
@@ -634,5 +1062,52 @@ footer i {
     
     .food-container {
         grid-template-columns: 3fr 2fr;
+    }
+    
+    .calendar-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "calendar plan"
+            "seasonal seasonal";
+    }
+    
+    .month-calendar {
+        grid-area: calendar;
+    }
+    
+    .feeding-plan {
+        grid-area: plan;
+    }
+    
+    .seasonal-foods {
+        grid-area: seasonal;
+    }
+    
+    .checklist-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "daily weekly"
+            "tips tips"
+            "progress progress";
+    }
+    
+    .daily-checklist {
+        grid-area: daily;
+    }
+    
+    .weekly-checklist {
+        grid-area: weekly;
+    }
+    
+    .checklist-tips {
+        grid-area: tips;
+    }
+    
+    .progress-tracker {
+        grid-area: progress;
+    }
+    
+    .tip-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 }

@@ -43,6 +43,14 @@
                 <i class="fas fa-carrot"></i>
                 <span>Futter-DB</span>
             </button>
+            <button class="tab-btn" data-tab="calendar">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Futterkalender</span>
+            </button>
+            <button class="tab-btn" data-tab="checklist">
+                <i class="fas fa-clipboard-check"></i>
+                <span>Checkliste</span>
+            </button>
         </div>
     </nav>
 
@@ -51,9 +59,14 @@
         <section id="recipes" class="tab-content active">
             <div class="section-header">
                 <h2><i class="fas fa-utensils"></i> Entenrezepte</h2>
-                <button id="random-recipe" class="btn">
-                    <i class="fas fa-random"></i> Zufälliges Rezept
-                </button>
+                <div class="header-actions">
+                    <button id="more-recipes" class="btn">
+                        <i class="fas fa-plus"></i> Mehr Rezepte
+                    </button>
+                    <button id="random-recipe" class="btn">
+                        <i class="fas fa-random"></i> Zufälliges Rezept
+                    </button>
+                </div>
             </div>
             
             <div class="recipe-container">
@@ -76,6 +89,8 @@
                         <h3>Heute</h3>
                         <p class="temp">17°C</p>
                         <p class="condition">Sonnig</p>
+                        <p class="current-time">Aktuelle Uhrzeit: <span id="current-time">12:00</span></p>
+                        <p class="wind-info"><i class="fas fa-wind"></i> Windgeschwindigkeit: <span id="wind-speed">Leicht</span></p>
                         <p class="duck-advice">Perfektes Wetter für einen Teichbesuch!</p>
                     </div>
                 </div>
@@ -85,16 +100,19 @@
                         <h4>Morgen</h4>
                         <i class="fas fa-cloud-sun"></i>
                         <p>19°C</p>
+                        <p class="wind-tag"><i class="fas fa-wind"></i> Mäßig</p>
                     </div>
                     <div class="forecast-day">
                         <h4>Übermorgen</h4>
                         <i class="fas fa-cloud-rain"></i>
                         <p>16°C</p>
+                        <p class="wind-tag"><i class="fas fa-wind"></i> Stark</p>
                     </div>
                     <div class="forecast-day">
                         <h4>Mittwoch</h4>
                         <i class="fas fa-cloud"></i>
                         <p>15°C</p>
+                        <p class="wind-tag"><i class="fas fa-wind"></i> Leicht</p>
                     </div>
                 </div>
                 
@@ -103,6 +121,7 @@
                     <ul>
                         <li>Bei Sonnenschein: Enten brauchen auch Schatten</li>
                         <li>Bei Regen: Enten lieben es, aber beobachte sie vom Trockenen</li>
+                        <li>Bei starkem Wind: Biete windgeschützte Bereiche an</li>
                         <li>Im Winter: Halte einen Teil des Teichs eisfrei</li>
                     </ul>
                 </div>
@@ -184,6 +203,252 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <!-- Feeding Calendar Section -->
+        <section id="calendar" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fas fa-calendar-alt"></i> Entenfutter-Kalender</h2>
+            </div>
+            
+            <div class="calendar-container">
+                <div class="calendar-nav">
+                    <h3>Mai 2025</h3>
+                    <div class="calendar-controls">
+                        <button id="prev-month" class="btn-icon"><i class="fas fa-chevron-left"></i></button>
+                        <button id="next-month" class="btn-icon"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="month-calendar">
+                    <div class="weekdays">
+                        <div>Mo</div>
+                        <div>Di</div>
+                        <div>Mi</div>
+                        <div>Do</div>
+                        <div>Fr</div>
+                        <div>Sa</div>
+                        <div>So</div>
+                    </div>
+                    <div class="days">
+                        <div class="day empty"></div>
+                        <div class="day empty"></div>
+                        <div class="day empty"></div>
+                        <div class="day">1</div>
+                        <div class="day">2</div>
+                        <div class="day">3</div>
+                        <div class="day">4</div>
+                        <div class="day">5</div>
+                        <div class="day">6</div>
+                        <div class="day">7</div>
+                        <div class="day">8</div>
+                        <div class="day">9</div>
+                        <div class="day">10</div>
+                        <div class="day">11</div>
+                        <div class="day">12</div>
+                        <div class="day">13</div>
+                        <div class="day">14</div>
+                        <div class="day">15</div>
+                        <div class="day">16</div>
+                        <div class="day">17</div>
+                        <div class="day">18</div>
+                        <div class="day">19</div>
+                        <div class="day">20</div>
+                        <div class="day">21</div>
+                        <div class="day">22</div>
+                        <div class="day">23</div>
+                        <div class="day current">24</div>
+                        <div class="day">25</div>
+                        <div class="day">26</div>
+                        <div class="day">27</div>
+                        <div class="day">28</div>
+                        <div class="day">29</div>
+                        <div class="day">30</div>
+                        <div class="day">31</div>
+                    </div>
+                </div>
+                
+                <div class="feeding-plan">
+                    <h3>Täglicher Fütterungsplan</h3>
+                    <div class="feeding-schedule">
+                        <div class="feeding-time">
+                            <h4><i class="fas fa-sun"></i> Morgens (7-9 Uhr)</h4>
+                            <ul>
+                                <li>Haferflocken mit Früchten</li>
+                                <li>Frisches Wasser bereitstellen</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-time">
+                            <h4><i class="fas fa-cloud-sun"></i> Mittags (12-14 Uhr)</h4>
+                            <ul>
+                                <li>Gemischtes Gemüse</li>
+                                <li>Samen und Körner</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-time">
+                            <h4><i class="fas fa-moon"></i> Abends (17-19 Uhr)</h4>
+                            <ul>
+                                <li>Getrocknete Kräuter</li>
+                                <li>Leichte Körner-Mischung</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="seasonal-foods">
+                    <h3>Saisonale Fütterungstipps</h3>
+                    <div class="season-tabs">
+                        <button class="season-tab active" data-season="spring">Frühling</button>
+                        <button class="season-tab" data-season="summer">Sommer</button>
+                        <button class="season-tab" data-season="autumn">Herbst</button>
+                        <button class="season-tab" data-season="winter">Winter</button>
+                    </div>
+                    <div class="season-content active" id="spring-content">
+                        <p>Im Frühling können Enten besonders gut mit frischen Kräutern wie Löwenzahn, jungem Gras und Klee gefüttert werden. Erste Beeren und Früchte sind ebenfalls eine gute Ergänzung.</p>
+                        <ul class="seasonal-foods-list">
+                            <li><i class="fas fa-seedling"></i> Junge Kräuter</li>
+                            <li><i class="fas fa-leaf"></i> Frisches Grün</li>
+                            <li><i class="fas fa-apple-alt"></i> Erste Früchte</li>
+                        </ul>
+                    </div>
+                    <div class="season-content" id="summer-content">
+                        <p>Im Sommer ist reichlich frisches Obst und Gemüse verfügbar. Enten lieben Wassermelone, Gurken, Tomaten und alle Arten von Beeren.</p>
+                        <ul class="seasonal-foods-list">
+                            <li><i class="fas fa-apple-alt"></i> Sommerfrüchte</li>
+                            <li><i class="fas fa-carrot"></i> Frisches Gemüse</li>
+                            <li><i class="fas fa-tint"></i> Wasserreiche Nahrung</li>
+                        </ul>
+                    </div>
+                    <div class="season-content" id="autumn-content">
+                        <p>Im Herbst sind Kürbis, Äpfel und verschiedene Samen eine gute Wahl. Diese helfen den Enten, sich auf die kältere Jahreszeit vorzubereiten.</p>
+                        <ul class="seasonal-foods-list">
+                            <li><i class="fas fa-apple-alt"></i> Äpfel und Birnen</li>
+                            <li><i class="fas fa-seedling"></i> Verschiedene Samen</li>
+                            <li><i class="fas fa-bread-slice"></i> Mehr Körner</li>
+                        </ul>
+                    </div>
+                    <div class="season-content" id="winter-content">
+                        <p>Im Winter benötigen Enten mehr energiereiche Nahrung. Biete ihnen Körner, Samen und zusätzliche Haferflocken an, um ihnen zu helfen, warm zu bleiben.</p>
+                        <ul class="seasonal-foods-list">
+                            <li><i class="fas fa-wheat"></i> Energiereiche Körner</li>
+                            <li><i class="fas fa-seedling"></i> Protein-reiche Samen</li>
+                            <li><i class="fas fa-carrot"></i> Wurzelgemüse</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Duck Care Checklist Section -->
+        <section id="checklist" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fas fa-clipboard-check"></i> Entenpflege-Checkliste</h2>
+            </div>
+            
+            <div class="checklist-container">
+                <div class="daily-checklist">
+                    <h3>Tägliche Pflegeaufgaben</h3>
+                    <div class="checklist">
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task1" class="task-checkbox">
+                            <label for="task1">Frisches Wasser bereitstellen</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task2" class="task-checkbox">
+                            <label for="task2">Dreimal täglich füttern</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task3" class="task-checkbox">
+                            <label for="task3">Futterstelle reinigen</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task4" class="task-checkbox">
+                            <label for="task4">Nach Wohlbefinden schauen</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task5" class="task-checkbox">
+                            <label for="task5">Badestelle sauber halten</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task6" class="task-checkbox">
+                            <label for="task6">Gefieder kontrollieren</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="weekly-checklist">
+                    <h3>Wöchentliche Pflegeaufgaben</h3>
+                    <div class="checklist">
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task7" class="task-checkbox">
+                            <label for="task7">Unterkunft gründlich reinigen</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task8" class="task-checkbox">
+                            <label for="task8">Frische Einstreu bereitstellen</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task9" class="task-checkbox">
+                            <label for="task9">Gewicht kontrollieren</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task10" class="task-checkbox">
+                            <label for="task10">Teich/Schwimmbereich reinigen</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="task11" class="task-checkbox">
+                            <label for="task11">Auf Parasiten untersuchen</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="checklist-tips">
+                    <h3>Pflegehinweise</h3>
+                    <div class="tip-container">
+                        <div class="care-tip">
+                            <div class="tip-icon"><i class="fas fa-feather"></i></div>
+                            <div class="tip-content">
+                                <h4>Gefiederpflege</h4>
+                                <p>Enten pflegen ihr Gefieder selbst, benötigen aber Zugang zu sauberem Wasser, um dies effektiv tun zu können. Stelle sicher, dass sie immer eine Badegelegenheit haben.</p>
+                            </div>
+                        </div>
+                        <div class="care-tip">
+                            <div class="tip-icon"><i class="fas fa-home"></i></div>
+                            <div class="tip-content">
+                                <h4>Unterkunft</h4>
+                                <p>Die Unterkunft sollte trocken, zugfrei und raubtiergeschützt sein. Sorge für ausreichend Platz und gute Belüftung, aber schütze vor Zugluft.</p>
+                            </div>
+                        </div>
+                        <div class="care-tip">
+                            <div class="tip-icon"><i class="fas fa-temperature-low"></i></div>
+                            <div class="tip-content">
+                                <h4>Temperatur</h4>
+                                <p>Enten sind kälteresistent, brauchen aber im Winter einen trockenen, windgeschützten Rückzugsort. Im Sommer benötigen sie Schatten und viel Wasser.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="progress-tracker">
+                    <h3>Pflege-Fortschritt</h3>
+                    <div class="progress-container">
+                        <div class="progress-bar-container">
+                            <div class="progress-label">Tägliche Aufgaben</div>
+                            <div class="progress-outer">
+                                <div class="progress-inner" id="daily-progress" style="width: 0%;">0%</div>
+                            </div>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-label">Wöchentliche Aufgaben</div>
+                            <div class="progress-outer">
+                                <div class="progress-inner" id="weekly-progress" style="width: 0%;">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="reset-checklist" class="btn">
+                        <i class="fas fa-redo"></i> Checkliste zurücksetzen
+                    </button>
                 </div>
             </div>
         </section>
