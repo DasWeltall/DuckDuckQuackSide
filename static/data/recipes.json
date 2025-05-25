@@ -1,136 +1,277 @@
 [
   {
-    "name": "Haferbrei mit Löwenzahn",
+    "name": "Proteinreicher Haferbrei mit Löwenzahn",
     "type": "Frühstück",
     "ingredients": [
-      "50g Haferflocken",
-      "150ml Wasser",
-      "Eine Handvoll frische Löwenzahnblätter",
-      "Ein Teelöffel Leinsamen"
+      "50 g Haferflocken (fein gemahlen)",
+      "150 ml lauwarmes Wasser",
+      "Eine Handvoll junge Löwenzahnblätter (gehackt)",
+      "1 EL geschrotete Leinsamen",
+      "1 EL hochwertiges Hühner‑ oder Fischmehl"
     ],
     "instructions": [
-      "Haferflocken mit Wasser in einem Topf vermischen.",
-      "Bei mittlerer Hitze 3-5 Minuten köcheln lassen.",
-      "Löwenzahnblätter waschen und klein schneiden.",
-      "Vom Herd nehmen und Löwenzahn untermischen.",
-      "Mit Leinsamen bestreuen und servieren."
+      "Haferflocken mit dem lauwarmen Wasser in einem Topf unter Rühren aufkochen.",
+      "Bei kleiner Hitze 3–4 Minuten sanft köcheln lassen, bis die Konsistenz breiig ist.",
+      "Vom Herd nehmen, Löwenzahn und Leinsamen unterrühren.",
+      "Hühner‑ oder Fischmehl gleichmäßig einmischen.",
+      "Abkühlen lassen (auf etwa 35 °C) und lauwarm servieren."
     ],
-    "time": 10,
+    "time": 12,
     "difficulty": "Einfach"
   },
   {
-    "name": "Apfelstückchen mit Kräutern",
+    "name": "Apfel-Petersilien-Mix",
     "type": "Snack",
     "ingredients": [
-      "1 Apfel",
-      "Frische Petersilie",
-      "Frischer Dill",
-      "Ein Spritzer Zitronensaft"
+      "1 kleiner Apfel (geschält, fein gewürfelt)",
+      "Eine Handvoll Petersilie (fein gehackt)",
+      "Einige kleingehackte Gänseblümchenblätter",
+      "Wenig lauwarmes Wasser zum Binden"
     ],
     "instructions": [
-      "Apfel waschen und in kleine Stücke schneiden.",
-      "Kräuter waschen und fein hacken.",
-      "Apfelstücke mit Kräutern vermischen.",
-      "Mit einem Spritzer Zitronensaft beträufeln.",
-      "Sofort servieren oder im Kühlschrank aufbewahren."
+      "Apfelwürfel und Petersilie in eine Schüssel geben.",
+      "Gänseblümchenblätter untermischen.",
+      "Mit ein paar Teelöffeln lauwarmem Wasser leicht vermengen, damit alles zusammenhält.",
+      "Sofort lauwarm anbieten."
     ],
-    "time": 5,
+    "time": 7,
     "difficulty": "Sehr einfach"
   },
   {
-    "name": "Gemüse-Entensalat",
+    "name": "Gemüse-Entenküken-Salat",
     "type": "Mittagessen",
     "ingredients": [
-      "Eine Handvoll Salat (Rucola oder Feldsalat)",
-      "1 kleine Gurke",
-      "1 kleine Karotte",
-      "Einige Erbsen",
-      "Ein paar Traubenstücke"
+      "Eine Handvoll junger Feldsalatblätter (zerrupft)",
+      "1/4 Gurke (fein gewürfelt)",
+      "1 kleine Karotte (geraspelt)",
+      "1 EL gekochte Erbsen",
+      "1 EL klein gehackte getrocknete Mehlwürmer"
     ],
     "instructions": [
-      "Salat waschen und in mundgerechte Stücke zupfen.",
-      "Gurke und Karotte in kleine Würfel schneiden.",
-      "Erbsen kurz in heißem Wasser blanchieren.",
-      "Alle Zutaten in einer Schüssel mischen.",
-      "Mit ein paar Traubenstücken garnieren."
+      "Feldsalatblätter, Gurke und Karotte in eine Schüssel geben.",
+      "Erbsen kurz abkühlen lassen und hinzufügen.",
+      "Getrocknete Mehlwürmer unterheben.",
+      "Gut mischen und bei Zimmertemperatur servieren."
     ],
     "time": 15,
     "difficulty": "Mittel"
   },
   {
-    "name": "Beeren-Kürbismix",
+    "name": "Kürbis-Beeren-Proteinmix",
     "type": "Snack",
     "ingredients": [
-      "Eine halbe Tasse Kürbis (gekocht und gewürfelt)",
-      "Einige Heidelbeeren",
-      "Einige Himbeeren",
-      "Ein paar Sonnenblumenkerne"
+      "100 g gekochter Hokkaidokürbis (weich, klein gewürfelt)",
+      "Eine Handvoll Heidelbeeren (zerdrückt)",
+      "Einige Himbeeren (zerdrückt)",
+      "1 EL geschrotete Sonnenblumenkerne",
+      "1 EL getrocknete Insektenpulver (z. B. Buffalowürmer)"
     ],
     "instructions": [
-      "Kürbis kochen oder dämpfen bis er weich ist.",
-      "In kleine Würfel schneiden und abkühlen lassen.",
-      "Beeren waschen und mit dem Kürbis vermischen.",
-      "Mit Sonnenblumenkernen bestreuen."
+      "Kürbiswürfel mit einem Löffel zerdrücken und abkühlen lassen.",
+      "Beeren leicht zerdrücken und unter den Kürbis heben.",
+      "Sonnenblumenkerne und Insektenpulver untermischen.",
+      "Lauwarm anbieten."
     ],
     "time": 20,
     "difficulty": "Mittel"
   },
   {
-    "name": "Körnermischung mit Obst",
+    "name": "Körnermischung mit Apfel und Spinat",
     "type": "Frühstück",
     "ingredients": [
-      "Eine Handvoll gemischte Körner (Hirse, Hafer, Buchweizen)",
-      "Ein halber Apfel",
-      "Einige Trauben",
-      "Etwas frischer Spinat"
+      "Eine Handvoll gekochte Hirse (abgekühlt)",
+      "20 g Haferflocken",
+      "1/2 Apfel (geschält, fein gewürfelt)",
+      "Eine Handvoll junger Spinatblätter (gehackt)",
+      "1 EL getrocknete Mehlwürmer"
     ],
     "instructions": [
-      "Körner in eine Schüssel geben.",
-      "Apfel waschen und in kleine Stücke schneiden.",
-      "Trauben halbieren.",
-      "Spinat waschen und kleinhacken.",
-      "Alle Zutaten vermischen und servieren."
+      "Hirse und Haferflocken in einer Schüssel vermengen.",
+      "Apfelwürfel und Spinat untermischen.",
+      "Mehlwürmer darüberstreuen.",
+      "Lauwarm servieren."
     ],
-    "time": 8,
+    "time": 10,
     "difficulty": "Einfach"
   },
   {
-    "name": "Gemüse-Reisbällchen",
+    "name": "Gemüse-Reisbällchen mit Insekten",
     "type": "Mittagessen",
     "ingredients": [
-      "150g gekochter Reis (abgekühlt)",
-      "1 kleine Karotte",
-      "Etwas Gurke",
-      "Frische Kräuter"
+      "150 g gekochter Reis (abgekühlt)",
+      "1 kleine Karotte (geraspelt)",
+      "1/4 Gurke (geraspelt)",
+      "1 EL Petersilie (fein gehackt)",
+      "1 EL getrocknete Buffalowürmer"
     ],
     "instructions": [
-      "Karotte und Gurke fein raspeln oder in sehr kleine Würfel schneiden.",
-      "Kräuter fein hacken.",
-      "Alle Zutaten mit dem abgekühlten Reis vermischen.",
-      "Mit feuchten Händen kleine Bällchen formen.",
-      "Vor dem Servieren kurz ruhen lassen."
+      "Karotte, Gurke und Petersilie in einer Schüssel mischen.",
+      "Reis hinzufügen und alles gut verkneten.",
+      "Mehlwürmer untermengen.",
+      "Mit leicht angefeuchteten Händen kleine Bällchen formen.",
+      "5 Min ruhen lassen, bis sie zusammenhalten, dann lauwarm anbieten."
     ],
     "time": 25,
     "difficulty": "Fortgeschritten"
   },
   {
-    "name": "Frische Kräuterplatte",
+    "name": "Frische Kräuter- und Salatplatte",
     "type": "Snack",
     "ingredients": [
-      "Frischer Löwenzahn",
-      "Petersilie",
-      "Basilikum",
-      "Feldsalat",
-      "Einige Gurkenscheiben"
+      "Junger Löwenzahn (gehackt)",
+      "Petersilie (gehackt)",
+      "Basilikumblätter (ganz)",
+      "Feldsalat (gezupft)",
+      "Dünne Gurkenscheiben"
     ],
     "instructions": [
-      "Alle Kräuter und Salat gründlich waschen.",
-      "Größere Blätter in mundgerechte Stücke teilen.",
-      "Gurke in dünne Scheiben schneiden.",
-      "Alles auf einem Teller anrichten.",
-      "Sofort servieren, damit die Kräuter frisch bleiben."
+      "Alle Kräuter und Salate gründlich waschen.",
+      "Löwenzahn, Petersilie und Basilikumblätter vorbereiten.",
+      "Gurke in feine Scheiben schneiden.",
+      "Alles locker auf einem flachen Teller anrichten.",
+      "Unmittelbar frisch servieren."
     ],
     "time": 10,
+    "difficulty": "Einfach"
+  },
+  {
+    "name": "Quark‑Bohnen‑Breimix",
+    "type": "Frühstück",
+    "ingredients": [
+      "50 g Magerquark",
+      "2 EL gekochte, zerdrückte weiße Bohnen",
+      "1 EL geschrotete Leinsamen",
+      "Lauwarmes Wasser nach Bedarf"
+    ],
+    "instructions": [
+      "Quark und zerdrückte Bohnen in einer Schüssel verrühren.",
+      "Leinsamen unterheben.",
+      "So viel lauwarmes Wasser einrühren, bis eine breiige Konsistenz entsteht.",
+      "Auf ca. 35 °C abkühlen lassen und servieren."
+    ],
+    "time": 8,
+    "difficulty": "Einfach"
+  },
+  {
+    "name": "Gekochtes Ei‑Yolk‑Mash",
+    "type": "Snack",
+    "ingredients": [
+      "1 hart gekochtes Hühnerei (nur das Eigelb)",
+      "1 TL Pflanzenöl (z. B. Rapsöl)",
+      "1 EL fein gehackte Petersilie"
+    ],
+    "instructions": [
+      "Eigelb mit einer Gabel fein zerdrücken.",
+      "Öl und gehackte Petersilie untermischen.",
+      "Etwas lauwarmes Wasser hinzufügen, bis ein glatter Brei entsteht.",
+      "Lauwarm anbieten."
+    ],
+    "time": 5,
+    "difficulty": "Sehr einfach"
+  },
+  {
+    "name": "Fisch‑Gurken‑Püree",
+    "type": "Mittagessen",
+    "ingredients": [
+      "30 g gekochter, entgräteter Seelachs",
+      "1/4 Gurke (geschält, entkernt)",
+      "1 TL Olivenöl",
+      "Lauwarmes Wasser"
+    ],
+    "instructions": [
+      "Fisch und Gurke in kleine Stücke schneiden.",
+      "Mit einem Stabmixer pürieren, dabei Olivenöl einlaufen lassen.",
+      "Bei Bedarf mit lauwarmem Wasser auf Breikonsistenz bringen.",
+      "Ca. 35 °C abkühlen lassen und servieren."
+    ],
+    "time": 12,
+    "difficulty": "Mittel"
+  },
+  {
+    "name": "Erbsen‑Käse‑Breikügelchen",
+    "type": "Snack",
+    "ingredients": [
+      "50 g gekochte Erbsen (püriert)",
+      "20 g feiner Hüttenkäse",
+      "1 EL geschrotete Sonnenblumenkerne"
+    ],
+    "instructions": [
+      "Erbsen und Hüttenkäse in einer Schüssel gut vermengen.",
+      "Sonnenblumenkerne untermischen.",
+      "Mit angefeuchteten Händen kleine Kugeln formen.",
+      "Kurz ruhen lassen und lauwarm anbieten."
+    ],
+    "time": 15,
+    "difficulty": "Einfach"
+  },
+  {
+    "name": "Kräuter‑Gemüse‑Porridge",
+    "type": "Frühstück",
+    "ingredients": [
+      "30 g Hirse",
+      "100 ml Gemüsebrühe (natriumarm)",
+      "1 EL gehackte Petersilie",
+      "1 EL gehackter Schnittlauch"
+    ],
+    "instructions": [
+      "Hirse mit Brühe in einem Topf aufkochen.",
+      "Bei kleiner Hitze 10 Minuten köcheln lassen, bis die Hirse weich ist.",
+      "Vom Herd nehmen, Kräuter unterrühren.",
+      "Auf 35 °C abkühlen lassen und servieren."
+    ],
+    "time": 18,
+    "difficulty": "Einfach"
+  },
+  {
+    "name": "Karotten‑Haferflocken‑Kükenriegel",
+    "type": "Mittagessen",
+    "ingredients": [
+      "50 g Haferflocken (fein)",
+      "50 g geraspelte Karotte",
+      "1 TL getrocknete Mehlwürmer, pulverisiert",
+      "1 EL lauwarmes Wasser"
+    ],
+    "instructions": [
+      "Haferflocken und Karottenraspel vermengen.",
+      "Mehlwurmpulver untermischen.",
+      "Mit Wasser zu einer formbaren Masse verrühren.",
+      "Flache Riegel formen und 5 Minuten ruhen lassen.",
+      "Lauwarm servieren."
+    ],
+    "time": 20,
+    "difficulty": "Mittel"
+  },
+  {
+    "name": "Gräser‑Salatmischung",
+    "type": "Snack",
+    "ingredients": [
+      "Eine Handvoll junge Gras‑ und Weizengrasblätter",
+      "1 EL gehackter Löwenzahn",
+      "1 EL fein gehackter Spinat",
+      "Wenig lauwarmes Wasser"
+    ],
+    "instructions": [
+      "Alle Blätter gründlich waschen und fein hacken.",
+      "Mit ein wenig Wasser befeuchten, damit die Mischung haftet.",
+      "Lauwarm frisch anbieten."
+    ],
+    "time": 7,
+    "difficulty": "Sehr einfach"
+  },
+  {
+    "name": "Milch‑Protein‑Fit",
+    "type": "Frühstück",
+    "ingredients": [
+      "100 ml fettarme Milch",
+      "1 EL langsam wirksames Proteinpulver (z. B. Molkenprotein)",
+      "1 EL Haferkleie"
+    ],
+    "instructions": [
+      "Milch leicht erwärmen (max. 40 °C).",
+      "Protein­pulver und Haferkleie einrühren.",
+      "Kurz quellen lassen und lauwarm servieren."
+    ],
+    "time": 6,
     "difficulty": "Einfach"
   }
 ]
